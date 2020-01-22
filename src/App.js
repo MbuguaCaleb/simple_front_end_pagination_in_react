@@ -21,7 +21,6 @@ const App = () => {
     fetchPosts();
   }, []);
 
-  console.log(posts);
   return (
     <div className='container'>
       <h1>MY App</h1>
