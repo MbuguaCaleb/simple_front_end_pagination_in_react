@@ -8,7 +8,7 @@ const App = () => {
   const [posts, setPosts] = useState([{}]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(5);
+  const [postsPerPage] = useState(5);
 
   //Hooks LifeCyle Method
   //Runs when ever the components Mount
@@ -30,6 +30,10 @@ const App = () => {
   //It will slice out 10 posts
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
+  //Change Page
+  //Page Number Param has been passed from previous component as a prop
+  const paginate = pageNumber => setCurrentPage(pageNumber);
+
   return (
     <div className='container mt-5'>
       <h1 className='text-primary mb-3'>My Blog</h1>
@@ -37,6 +41,7 @@ const App = () => {
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={posts.length}
+        paginate={paginate}
       ></Pagination>
     </div>
   );
