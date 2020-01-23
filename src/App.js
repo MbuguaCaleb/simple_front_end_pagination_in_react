@@ -16,13 +16,16 @@ const App = () => {
     const fetchPosts = async () => {
       setLoading(true);
       const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
-      setPosts(res.data);
+
+      //ti-react-test.herokuapp.com/users
+      https: setPosts(res.data);
       setLoading(false);
     };
 
     fetchPosts();
   }, []);
 
+  console.log(posts);
   //Implementing Pagination
   //Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
