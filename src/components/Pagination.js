@@ -1,10 +1,10 @@
 import React from "react";
 
-export const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
+export const Pagination = ({ usersPerPage, totalUsers, paginate }) => {
   const pageNumbers = [];
 
   //80/10 =8   //100/10 =10
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
     //Dynamic pagenumbers pushed in the array
     pageNumbers.push(i);
   }
